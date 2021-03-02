@@ -38,72 +38,72 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 
-# cat > ~/.zshrc <<EOF
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+cat > ~/.zshrc <<EOF
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 
-# plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting)
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
-# [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
-# EOF
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+EOF
 
-# curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# cat > ~/.vimrc <<EOF
-# call plug#begin('~/.vim/plugged')
-# Plug 'tpope/vim-fugitive'
-# Plug 'vim-airline/vim-airline'
-# Plug 'hzchirs/vim-material'
-# Plug 'scrooloose/nerdtree'
-# Plug 'Xuyuanp/nerdtree-git-plugin'
-# call plug#end()
+cat > ~/.vimrc <<EOF
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'hzchirs/vim-material'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+call plug#end()
 
-# if (has("nvim"))
-#   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-# endif
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 
-# if (has("termguicolors"))
-#   set termguicolors
-# endif
+if (has("termguicolors"))
+  set termguicolors
+endif
 
-# if !has('gui_running')
-#       set t_Co=256
-# endif
+if !has('gui_running')
+      set t_Co=256
+endif
 
-# if &term =~ '256color'
-#     set t_ut=
-# endif
+if &term =~ '256color'
+    set t_ut=
+endif
 
-# set background=dark
-# colorscheme vim-material
+set background=dark
+colorscheme vim-material
 
-# let g:airline_theme='material'
-# let g:airline_powerline_fonts = 1
+let g:airline_theme='material'
+let g:airline_powerline_fonts = 1
 
-# map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
-# syntax on
-# set ff=unix
-# set tabstop=4
-# set shiftwidth=4
-# set expandtab
-# set nowrap
-# set number
-# set noshowmode
-# set laststatus=2
-# autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-# EOF
+syntax on
+set ff=unix
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set nowrap
+set number
+set noshowmode
+set laststatus=2
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+EOF
 
 
 # cat > ~/.p10k.zsh <<EOF
