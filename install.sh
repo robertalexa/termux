@@ -39,11 +39,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 
 cat > ~/.zshrc <<EOF
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh" ]]; then
+  source "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh"
 fi
 
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=\$HOME/.oh-my-zsh
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -52,9 +52,9 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 
 plugins=(git zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
+source \$ZSH/oh-my-zsh.sh
 
-[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+[[ ! -f \$HOME/.p10k.zsh ]] || source \$HOME/.p10k.zsh
 EOF
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -70,7 +70,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let \$NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
 if (has("termguicolors"))
