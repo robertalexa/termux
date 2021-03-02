@@ -26,7 +26,7 @@ color7                          : #c0c5ce
 color15                         : #eff1f5
 EOF
 
-curl -sfLo ~/.termux/font.tff \
+curl -sfLo ~/.termux/font.ttf \
          https://github.com/robertalexa/dotfiles/raw/master/fonts/MesloLGS%20NF%20Regular.ttf
 
 pkg update -y
