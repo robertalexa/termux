@@ -40,7 +40,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/cu
 
 cat > ~/.zshrc <<EOF
 if [[ -r "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh" ]]; then
-  source "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  source "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh"
 fi
 
 export ZSH=\$HOME/.oh-my-zsh
